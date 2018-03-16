@@ -60,7 +60,7 @@ void loop()
   if (FlagSOSCopy) {
     Player.play(2);  //проиграть фразу "Вызываю помощь!"
     delay(2500);
-    sendSMS(Phone_number, Name+" v opasnosti!");  //отправка SMS
+    sendSMS(Phone_number, Name + " v opasnosti!");  //отправка SMS
     FlagSOS = 0;
     FlagSOSCopy = 0;};
   
