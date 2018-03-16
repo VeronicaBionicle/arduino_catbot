@@ -22,7 +22,7 @@ volatile unsigned int FlagSaid = 0;  //флаг для отслеживания 
 unsigned int SMSSentFlag = 0; //флаг отправки SMS
 String _response = ""; //переменная для хранения ответа GSM-модуля
 String Name = "Larisa Ivanovna";  //имя
-String Phone_number = "+79638252860"; //номер мобильного телефона
+String Phone_number = "+79622961513"; //номер мобильного телефона
 
 volatile unsigned int FlagSOS = 0;  //флаг срабатывания тревожной кнопки
 unsigned int FlagSOSCopy = 0;  //копия флага срабатывания тревожной кнопки для loop
@@ -60,7 +60,7 @@ void loop()
   if (FlagSOSCopy) {
     Player.play(2);  //проиграть фразу "Вызываю помощь!"
     delay(2500);
-    sendSMS(Phone_number, Name + " v opasnosti!");  //отправка SMS
+    sendSMS(Phone_number, Name + " prosit pomoshi.");  //отправка SMS
     FlagSOS = 0;
     FlagSOSCopy = 0;};
   
@@ -82,7 +82,7 @@ void loop()
         if (NoMoveFlagCopy){  //если движения не было
           Player.play(2);  //проиграть фразу "Вызываю помощь!"
           delay(2500);
-          sendSMS(Phone_number, Name+" v opasnosti!"); //отправка SMS
+          sendSMS(Phone_number, Name + " dolgo ne dvigaetsya"); //отправка SMS
           SMSSentFlag = 1;
         }
       }
